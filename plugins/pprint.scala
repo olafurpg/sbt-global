@@ -6,7 +6,8 @@ object PPrintPlugin extends AutoPlugin {
   override def trigger: PluginTrigger = AllRequirements
   override def projectSettings: Seq[Def.Setting[_]] = List(
     libraryDependencies ++= {
-      if (scalaVersion.value.startsWith("2.")) List("com.lihaoyi" %% "pprint" % "0.5.2")
+      if (scalaVersion.value.startsWith("2."))
+        List("com.lihaoyi" %% "pprint" % "0.5.2" % "provided")
       else Nil
     }
   )
